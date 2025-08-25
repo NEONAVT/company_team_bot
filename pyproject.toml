@@ -13,6 +13,8 @@ dependencies = [
     "alembic (>=1.16.4,<2.0.0)",
     "currencyconverter (>=0.18.9,<0.19.0)",
     "aiogram (>=3.22.0,<4.0.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "greenlet (>=3.2.4,<4.0.0)",
 ]
 
 

@@ -15,10 +15,19 @@ class Settings(BaseSettings):
     DB_NAME: str
     DB_DRIVER: str
 
+    postgres_user: str | None = None
+    postgres_password: str | None = None
+    postgres_db: str | None = None
+
     APP_NAME: str
     ENVIRONMENT: str
     LOG_LEVEL: str
     LOG_FORMAT: str
+
+    GUEST_ROLE: str
+    USER_ROLE: str
+    MANAGER_ROLE: str
+    OWNER_ROLE: str
 
     @property
     def db_url(self) -> str:

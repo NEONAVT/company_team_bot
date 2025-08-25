@@ -1,5 +1,14 @@
 .DEFAULT_GOAL := help
 
+start: ## Start services using docker-compose in detached mode
+	docker-compose up
+
+stop: ## Stop all services
+	docker-compose down
+
+logs: ## View logs
+	docker-compose logs -f
+
 install: ## Install a dependency using poetry
 	@echo "Installing dependency $(LIBRARY)"
 	poetry add $(LIBRARY)

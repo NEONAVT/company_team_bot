@@ -1,16 +1,13 @@
-from aiogram import Bot, Dispatcher, types, F
-from aiogram.filters import Command, CommandStart
-from aiogram.types import CallbackQuery
-
-from settings import settings
+from bot_config import bot, dp
 import asyncio
+from users import users_router
 
-bot = Bot(settings.bot_token)
-dp = Dispatcher()
 
-@dp.message(CommandStart())
-async def start(message: types.Message):
-    await message.answer(f"Hello {message.from_user.first_name}!")
+async def main():
+    dp.include_router(users_router)
+
+    await dp.start_polling(bot)
+
 
 if __name__ == "__main__":
-    asyncio.run(dp.start_polling(bot))
+    asyncio.run(main())
